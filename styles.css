@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #000;
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 1;
+    transition: opacity 2s;
+}
+
+#invitation-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #000; /* Nền đen */
+    padding: 60px; 
+    border-radius: 10px;
+    text-align: center;
+    display: none;
+    opacity: 0;
+    transition: opacity 4s ease-in-out; /* Tăng thời gian hiệu ứng mờ dần */
+    font-family: 'Great Vibes', cursive; /* Font chữ kiểu Pháp */
+}
+
+#invitation-card h1 {
+    color: #ff69b4; /* Màu hồng */
+    font-size: 3.5em; /* Kích thước chữ lớn hơn */
+}
+
+#invitation-card p,
+#invitation-card p + p {
+    color: white; /* Màu chữ trắng để nổi bật trên nền đen */
+    font-size: 1.5em; /* Tăng kích thước chữ cho các đoạn văn bản khác */
+}
+
+#invitation-card .image {
+    width: 60px; /* Tăng kích thước hình ảnh chung */
+    height: 60px;
+    margin: 10px;
+}
+
+.images-container {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.images-container.bottom {
+    justify-content: space-between;
+}
+
+.images-container.bottom .corner.large {
+    width: 80px; /* Tăng kích thước hình ảnh ở dưới */
+    height: 80px;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.firework {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+}
+
+@keyframes firework-animation {
+    0% { opacity: 1; transform: scale(0); }
+    100% { opacity: 0; transform: scale(1); }
+}
